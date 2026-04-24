@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse premium software products at Multi4You Store. Find production-ready SaaS applications with source code.">
+    <title>Store — Multi4You Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="m4u-header scrolled" id="mainHeader">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><div class="logo-icon"><i class="fa-solid fa-code"></i></div>Multi4<span class="accent">You</span></a>
+            <nav class="m4u-nav" id="mainNav">
+                <a href="index.html">Home</a><a href="store.html" class="active">Store</a><a href="product.html">WhatsCamp</a><a href="contact.html">Contact</a>
+                <button class="mobile-close" onclick="closeNav()">&times;</button>
+            </nav>
+            <div class="header-actions">
+                <a href="contact.html" class="btn-primary-custom btn-sm">Get Started</a>
+                <button class="mobile-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- STORE HERO -->
+    <section class="store-hero">
+        <div class="container">
+            <span class="section-badge" style="color:var(--accent);"><i class="fa-solid fa-store"></i> Our Store</span>
+            <h1 class="section-title white" style="font-size:2.75rem;">Browse All Products</h1>
+            <p class="section-desc centered" style="color:rgba(255,255,255,0.6);">Explore our curated collection of production-ready software applications.</p>
+            <div class="hero-search" style="margin-top:30px;">
+                <input type="text" placeholder="Search products, categories, technologies...">
+                <button type="button"><i class="fa-solid fa-search"></i> Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORE GRID -->
+    <section class="store-grid">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filter -->
+                <div class="col-lg-3 mb-4">
+                    <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px;position:sticky;top:100px;">
+                        <h4 style="font-size:1.05rem;margin-bottom:16px;"><i class="fa-solid fa-filter" style="color:var(--accent);margin-right:8px;"></i>Filters</h4>
+
+                        <div style="margin-bottom:20px;">
+                            <h5 style="font-size:0.9rem;font-weight:600;margin-bottom:10px;color:var(--gray-600);">Category</h5>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:0.9rem;color:var(--gray-600);">
+                                <input type="checkbox" checked style="accent-color:var(--accent);"> CRM & Business (1)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:0.9rem;color:var(--gray-400);">
+                                <input type="checkbox" disabled> Communication (0)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:0.9rem;color:var(--gray-400);">
+                                <input type="checkbox" disabled> AI & Automation (0)
+                            </label>
+                        </div>
+
+                        <div style="margin-bottom:20px;">
+                            <h5 style="font-size:0.9rem;font-weight:600;margin-bottom:10px;color:var(--gray-600);">Price Range</h5>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:0.9rem;color:var(--gray-600);cursor:pointer;">
+                                <input type="radio" name="price" checked style="accent-color:var(--accent);"> All Prices
+                            </label>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:0.9rem;color:var(--gray-600);cursor:pointer;">
+                                <input type="radio" name="price" style="accent-color:var(--accent);"> Under $50
+                            </label>
+                            <label style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:0.9rem;color:var(--gray-600);cursor:pointer;">
+                                <input type="radio" name="price" style="accent-color:var(--accent);"> $50 - $100
+                            </label>
+                        </div>
+
+                        <div>
+                            <h5 style="font-size:0.9rem;font-weight:600;margin-bottom:10px;color:var(--gray-600);">Sort By</h5>
+                            <select style="width:100%;padding:10px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.9rem;outline:none;color:var(--gray-700);">
+                                <option>Newest First</option>
+                                <option>Best Selling</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Top Rated</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="col-lg-9">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+                        <p style="color:var(--gray-500);margin:0;">Showing <strong style="color:var(--primary);">1</strong> product</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- WhatsCamp Card -->
+                        <div class="col-md-6">
+                            <a href="product.html" style="text-decoration:none;">
+                                <div class="product-card">
+                                    <div class="card-thumb">
+                                        <span style="position:absolute;top:12px;left:12px;padding:4px 12px;background:var(--accent);color:var(--primary);font-size:0.7rem;font-weight:700;border-radius:var(--radius-full);z-index:2;text-transform:uppercase;">Featured</span>
+                                        <img src="assets/img/whatscamp-dashboard.png" alt="WhatsCamp" style="max-height:200px;object-fit:contain;">
+                                    </div>
+                                    <div class="card-body">
+                                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;color:var(--warning);font-size:0.8rem;">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                            <span style="color:var(--gray-400);">(42)</span>
+                                        </div>
+                                        <h3 class="card-title">WhatsCamp — WhatsApp CRM</h3>
+                                        <p style="color:var(--gray-500);font-size:0.85rem;margin-bottom:12px;">WhatsApp automation CRM with IVR calling, AI chatbots & multi-tenant architecture.</p>
+                                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                                            <span class="card-price">$49</span>
+                                            <span style="font-size:0.8rem;color:var(--gray-400);">500+ sales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Coming Soon Cards -->
+                        <div class="col-md-6">
+                            <div class="product-card" style="opacity:0.5;pointer-events:none;">
+                                <div class="card-thumb" style="background:var(--gray-200);">
+                                    <div style="text-align:center;color:var(--gray-400);">
+                                        <i class="fa-solid fa-box" style="font-size:3rem;"></i>
+                                        <p style="margin:12px 0 0;font-weight:600;">Coming Soon</p>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title" style="color:var(--gray-400);">New Product</h3>
+                                    <p style="color:var(--gray-300);font-size:0.85rem;">A new software product is being prepared. Stay tuned!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product-card" style="opacity:0.4;pointer-events:none;">
+                                <div class="card-thumb" style="background:var(--gray-200);">
+                                    <div style="text-align:center;color:var(--gray-400);">
+                                        <i class="fa-solid fa-box" style="font-size:3rem;"></i>
+                                        <p style="margin:12px 0 0;font-weight:600;">Coming Soon</p>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title" style="color:var(--gray-400);">New Product</h3>
+                                    <p style="color:var(--gray-300);font-size:0.85rem;">More exciting products on the way!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="m4u-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4"><div class="footer-brand"><div class="logo">Multi4<span>You</span> Store</div><p>Premium software marketplace.</p></div></div>
+                <div class="col-lg-2 col-md-4"><h5 class="footer-heading">Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="store.html">Store</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="col-lg-2 col-md-4"><h5 class="footer-heading">Support</h5><ul class="footer-links"><li><a href="contact.html">Help Center</a></li><li><a href="#">License</a></li><li><a href="#">Privacy</a></li></ul></div>
+                <div class="col-lg-4"><h5 class="footer-heading">Contact</h5><ul class="footer-links"><li><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:8px;"></i>hello@multi4you.store</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Multi4You Store</p></div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP ========== -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <span class="wa-tooltip">Chat with us</span>
+    </div>
+
+    <script>
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+        function toggleNav() { document.getElementById('mainNav').classList.toggle('open'); }
+        function closeNav() { document.getElementById('mainNav').classList.remove('open'); }
+    </script>
+</body>
+</html>
