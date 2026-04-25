@@ -116,7 +116,16 @@ export default function Home() {
                       <div className="price">${featured.pricing?.[0]?.price ?? '—'} <small>/ {featured.pricing?.[0]?.tier}</small></div>
                       <div className="product-actions">
                         <Link to={`/product/${featured.slug}`} className="btn-primary-custom btn-sm">View Details <i className="fa-solid fa-arrow-right" /></Link>
-                        <a href="#" className="btn-dark btn-sm">Live Preview <i className="fa-solid fa-external-link" /></a>
+                        {featured.liveDemoUrl && (
+                          <a
+                            href={featured.liveDemoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-dark btn-sm"
+                          >
+                            Live Preview <i className="fa-solid fa-external-link" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

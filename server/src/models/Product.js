@@ -29,6 +29,7 @@ const ProductSchema = new mongoose.Schema({
   tags: { type: [String], default: [] },
   image: { type: String, default: '' },
   gallery: { type: [String], default: [] },
+  liveDemoUrl: { type: String, default: '', trim: true },
   pricing: { type: [PricingTierSchema], default: [] },
   rating: { type: Number, min: 0, max: 5, default: 0 },
   salesCount: { type: Number, default: 0 },

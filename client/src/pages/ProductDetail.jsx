@@ -10,6 +10,20 @@ const TABS = [
   { id: 'reviews', label: 'Reviews' },
 ];
 
+const WA_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '91XXXXXXXXXX';
+
+function buildBuyMessage(product, tier) {
+  const lines = [
+    `Hi! I'm interested in buying *${product.name}*.`,
+    '',
+    tier ? `License: ${tier.tier}` : null,
+    tier?.price != null ? `Price: $${tier.price}` : null,
+    '',
+    'Please share payment details.',
+  ].filter((l) => l !== null);
+  return encodeURIComponent(lines.join('\n'));
+}
+
 export default function ProductDetail() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
@@ -170,9 +184,26 @@ export default function ProductDetail() {
                     </div>
                   )}
 
-                  <a href="#" className="btn-primary-custom" style={{ width: '100%', justifyContent: 'center' }}>
+                  <a
+                    href={`https://wa.me/${WA_NUMBER}?text=${buildBuyMessage(product, product.pricing?.[licenseIdx])}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary-custom"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                  >
                     <i className="fa-solid fa-cart-plus" /> Buy Now
                   </a>
+                  {product.liveDemoUrl && (
+                    <a
+                      href={product.liveDemoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-dark mt-2"
+                      style={{ width: '100%', justifyContent: 'center' }}
+                    >
+                      <i className="fa-solid fa-eye" /> Live Preview <i className="fa-solid fa-external-link" />
+                    </a>
+                  )}
                   <Link to="/contact" className="btn-dark mt-2" style={{ width: '100%', justifyContent: 'center' }}>
                     <i className="fa-solid fa-envelope" /> Contact Sales
                   </Link>

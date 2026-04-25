@@ -7,7 +7,7 @@ const slugify = (s) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replac
 
 const empty = {
   slug: '', name: '', tagline: '', category: 'CRM & Business', description: '',
-  tags: [], image: '', gallery: [],
+  tags: [], image: '', gallery: [], liveDemoUrl: '',
   pricing: [{ tier: 'Regular License', price: 49, description: '' }],
   rating: 5, salesCount: 0, version: '1.0.0', publishDate: '', supportDuration: '6 months',
   features: [], techStack: { backend: [], frontend: [], database: [], deployment: [] },
@@ -166,6 +166,14 @@ export default function ProductForm() {
           </Field>
           <Field label="Category">
             <Input value={data.category} onChange={(e) => set({ category: e.target.value })} />
+          </Field>
+          <Field label="Live Preview Link" hint="This URL is opened when a visitor clicks the 'Live Preview' button on the home page and product page. Leave empty to hide that button.">
+            <Input
+              type="url"
+              value={data.liveDemoUrl || ''}
+              onChange={(e) => set({ liveDemoUrl: e.target.value })}
+              placeholder="https://demo.example.com"
+            />
           </Field>
           <Field label="Tags" hint="Press Enter or comma to add">
             <ChipInput value={data.tags} onChange={(tags) => set({ tags })} />
