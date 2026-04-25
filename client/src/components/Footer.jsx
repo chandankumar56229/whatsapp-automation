@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+const WA_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '91XXXXXXXXXX';
+const WA_DISPLAY = `+${WA_NUMBER.slice(0, 2)} ${WA_NUMBER.slice(2, 7)} ${WA_NUMBER.slice(7)}`;
+
 export default function Footer() {
   return (
     <footer className="m4u-footer">
@@ -48,7 +51,12 @@ export default function Footer() {
             <h5 className="footer-heading">Contact</h5>
             <ul className="footer-links">
               <li><i className="fa-solid fa-envelope" style={{ color: 'var(--gray-400)', marginRight: 8 }} /> hello@multi4you.store</li>
-              <li><i className="fa-solid fa-phone" style={{ color: 'var(--gray-400)', marginRight: 8 }} /> +91 XXXXXXXXXX</li>
+              <li>
+                <i className="fa-solid fa-phone" style={{ color: 'var(--gray-400)', marginRight: 8 }} />
+                <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {WA_DISPLAY}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

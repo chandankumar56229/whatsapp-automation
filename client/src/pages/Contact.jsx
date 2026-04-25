@@ -23,6 +23,9 @@ function FaqItem({ q, a }) {
   );
 }
 
+const WA_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '91XXXXXXXXXX';
+const WA_DISPLAY = `+${WA_NUMBER.slice(0, 2)} ${WA_NUMBER.slice(2, 7)} ${WA_NUMBER.slice(7)}`;
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: 'General', message: '' });
   const [status, setStatus] = useState('idle');
@@ -73,7 +76,11 @@ export default function Contact() {
               <div className="contact-card">
                 <div className="contact-icon"><i className="fa-brands fa-whatsapp" /></div>
                 <h4>WhatsApp</h4>
-                <p style={{ color: 'var(--gray-500)' }}>+91 XXXXXXXXXX</p>
+                <p style={{ color: 'var(--gray-500)' }}>
+                  <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    {WA_DISPLAY}
+                  </a>
+                </p>
               </div>
             </div>
             <div className="col-md-4">
@@ -118,14 +125,31 @@ export default function Contact() {
                     <textarea name="message" required rows="5" value={form.message} onChange={onChange} className="form-control-custom" />
                   </div>
                   {error && <p style={{ color: 'var(--error)' }}>{error}</p>}
-                  <button
-                    type="submit"
-                    className="btn-primary-custom"
-                    disabled={status === 'sending'}
-                    style={status === 'sent' ? { background: 'var(--success)' } : {}}
-                  >
-                    {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Message Sent ✓' : <>Send Message <i className="fa-solid fa-paper-plane" /></>}
-                  </button>
+                  <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                    <button
+                      type="submit"
+                      className="btn-primary-custom"
+                      disabled={status === 'sending'}
+                      style={status === 'sent' ? { background: 'var(--success)' } : {}}
+                    >
+                      {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Message Sent ✓' : <>Send Message <i className="fa-solid fa-paper-plane" /></>}
+                    </button>
+                    <a
+                      href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+                        `*${form.subject || 'General'}*\n\nName: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary-custom"
+                      style={{
+                        background: '#d4f7d4',
+                        color: '#0e5c2f',
+                        border: '1px solid #a6e3a6',
+                      }}
+                    >
+                      Send message on WhatsApp <i className="fa-brands fa-whatsapp" />
+                    </a>
+                  </div>
                 </form>
               </div>
             </div>
