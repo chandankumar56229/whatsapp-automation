@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Multi4You Store — We build premium software solutions for businesses worldwide.">
+    <title>About Us — Multi4You Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="m4u-header scrolled" id="mainHeader">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><div class="logo-icon"><i class="fa-solid fa-code"></i></div>Multi4<span class="accent">You</span></a>
+            <nav class="m4u-nav" id="mainNav">
+                <a href="index.html">Home</a><a href="store.html">Store</a><a href="product.html">WhatsCamp</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a>
+                <button class="mobile-close" onclick="closeNav()">&times;</button>
+            </nav>
+            <div class="header-actions">
+                <a href="contact.html" class="btn-primary-custom btn-sm">Get Started</a>
+                <button class="mobile-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+        <div class="container text-center">
+            <span class="section-badge" style="color:var(--accent);"><i class="fa-solid fa-users"></i> About Us</span>
+            <h1 class="section-title white" style="font-size:3rem;max-width:700px;margin:0 auto 16px;">Building Software That <span class="gradient-text" style="-webkit-text-fill-color: transparent;">Matters</span></h1>
+            <p class="section-desc centered" style="color:rgba(255,255,255,0.6);max-width:600px;">We're a team of passionate developers creating premium, production-ready software products that help businesses grow and succeed.</p>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="padding:60px 0;background:var(--white);margin-top:-1px;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1+</div>
+                    <div class="stat-label">Products Launched</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section style="padding:80px 0;background:var(--gray-50);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-badge"><i class="fa-solid fa-book-open"></i> Our Story</span>
+                    <h2 class="section-title" style="font-size:2.25rem;">From developers, for developers</h2>
+                    <p style="color:var(--gray-600);line-height:1.8;margin-bottom:16px;">
+                        Multi4You Store was born from a simple frustration — finding quality, production-ready software that actually works out of the box. Too many marketplace products are half-baked, poorly documented, and impossible to customize.
+                    </p>
+                    <p style="color:var(--gray-600);line-height:1.8;margin-bottom:16px;">
+                        We decided to change that. Every product in our store is built by experienced developers who understand what it takes to ship reliable software. We don't sell throwaway code — we deliver real products with real documentation and real support.
+                    </p>
+                    <p style="color:var(--gray-600);line-height:1.8;">
+                        Our flagship product, <strong>WhatsCamp</strong>, is a testament to this philosophy — a fully-featured WhatsApp CRM that businesses can deploy in minutes and customize to their needs.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div style="background:var(--gradient-primary);border-radius:var(--radius-xl);padding:50px;text-align:center;">
+                        <img src="assets/img/whatscamp-dashboard.png" alt="WhatsCamp product" style="max-width:100%;border-radius:var(--radius-md);box-shadow:var(--shadow-2xl);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge"><i class="fa-solid fa-heart"></i> Our Values</span>
+                <h2 class="section-title">What drives everything we do</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fa-solid fa-gem"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Quality First</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">Every line of code is reviewed, tested, and optimized. We ship products we'd proudly use ourselves.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon" style="background:rgba(59,130,246,0.1);color:var(--accent-2);"><i class="fa-solid fa-book"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Documentation Matters</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">Great code without great docs is useless. We write comprehensive guides for every feature.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon" style="background:rgba(139,92,246,0.1);color:#8B5CF6;"><i class="fa-solid fa-headset"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Real Support</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">Not bots. Real developers who understand the codebase and can help you with any issue.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon" style="background:rgba(245,158,11,0.1);color:#F59E0B;"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Security by Design</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">RBAC, data isolation, encrypted communications — security isn't an afterthought.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon" style="background:rgba(236,72,153,0.1);color:#EC4899;"><i class="fa-solid fa-arrows-rotate"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Continuous Updates</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">Our products evolve with the latest tech. Free lifetime updates included with every purchase.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon" style="background:rgba(16,185,129,0.1);color:#10B981;"><i class="fa-solid fa-code-branch"></i></div>
+                        <h3 style="font-size:1.15rem;margin-bottom:8px;">Developer Friendly</h3>
+                        <p style="color:var(--gray-500);font-size:0.95rem;">Clean architecture, modular code, and API-first design. Easy to extend and customize.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container position-relative" style="z-index:2;">
+            <h2 class="section-title white mb-3">Ready to Build Something Amazing?</h2>
+            <p class="section-desc centered" style="color:rgba(255,255,255,0.6);">Explore our products and find the perfect starting point for your next project.</p>
+            <div style="margin-top:30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="store.html" class="btn-primary-custom btn-lg">Browse Store <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn-outline-custom btn-lg">Contact Us <i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="m4u-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4"><div class="footer-brand"><div class="logo">Multi4<span>You</span> Store</div><p>Premium software marketplace.</p></div></div>
+                <div class="col-lg-2 col-md-4"><h5 class="footer-heading">Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="store.html">Store</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="col-lg-2 col-md-4"><h5 class="footer-heading">Support</h5><ul class="footer-links"><li><a href="contact.html">Help</a></li><li><a href="#">License</a></li><li><a href="#">Privacy</a></li></ul></div>
+                <div class="col-lg-4"><h5 class="footer-heading">Contact</h5><ul class="footer-links"><li><i class="fa-solid fa-envelope" style="color:var(--accent);margin-right:8px;"></i>hello@multi4you.store</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Multi4You Store</p></div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP ========== -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <span class="wa-tooltip">Chat with us</span>
+    </div>
+
+    <script>
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+        function toggleNav() { document.getElementById('mainNav').classList.toggle('open'); }
+        function closeNav() { document.getElementById('mainNav').classList.remove('open'); }
+    </script>
+</body>
+</html>

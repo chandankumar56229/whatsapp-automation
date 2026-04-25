@@ -1,0 +1,14 @@
+/* Storefront design system (ported 1:1 from legacy custom.css) — must come before @tailwind */
+@import './storefront.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Restore heading defaults under .storefront (Tailwind's preflight neutralizes them) */
+.storefront h1, .storefront h2, .storefront h3, .storefront h4, .storefront h5, .storefront h6 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
