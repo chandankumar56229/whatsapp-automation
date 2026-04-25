@@ -343,10 +343,20 @@ ul {
   font-size: 1.2rem;
 }
 
+.m4u-header .logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
 .m4u-nav {
   display: flex;
   align-items: center;
   gap: 32px;
+}
+
+.m4u-nav-backdrop {
+  display: none;
 }
 
 .m4u-nav a {
@@ -1757,34 +1767,63 @@ textarea.form-control-custom {
     display: none;
   }
 
+  .m4u-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+  }
+
+  .m4u-nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .m4u-nav {
-    display: none;
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.98);
-    backdrop-filter: blur(20px);
+    width: 70%;
+    max-width: 320px;
+    background: #ffffff;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 72px 24px 24px;
     z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
   .m4u-nav.open {
-    display: flex;
+    transform: translateX(0);
   }
 
   .m4u-nav a {
-    font-size: 1.25rem;
-    color: var(--white) !important;
+    font-size: 1rem;
+    color: #111 !important;
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    width: 100%;
   }
 
   .m4u-nav a:hover,
   .m4u-nav a.active {
-    color: var(--gray-300) !important;
+    color: var(--primary) !important;
+    background: #f7f7f7;
+  }
+
+  .m4u-nav a::after {
+    display: none;
   }
 
   .mobile-toggle {
@@ -1794,13 +1833,15 @@ textarea.form-control-custom {
   .mobile-close {
     display: block;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: var(--white);
+    top: 16px;
+    right: 16px;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: #111;
     cursor: pointer;
     background: none;
     border: none;
+    padding: 8px;
   }
 
   .header-search {
@@ -1861,6 +1902,10 @@ textarea.form-control-custom {
     width: 32px;
     height: 32px;
     font-size: 1rem;
+  }
+
+  .m4u-header .logo-img {
+    height: 36px;
   }
 
   .m4u-header .header-inner {

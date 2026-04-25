@@ -15,8 +15,13 @@ export default function Header() {
 
   useEffect(() => { setNavOpen(false); }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = navOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [navOpen]);
+
   // Force "scrolled" look on dark-hero pages
-  const darkHeroPaths = ['/store', '/about', '/contact'];
+  const darkHeroPaths = ['/about', '/contact'];
   const isDarkHero = darkHeroPaths.some((p) => location.pathname.startsWith(p)) ||
                      location.pathname.startsWith('/product/');
   const headerClass = `m4u-header${scrolled || isDarkHero ? ' scrolled' : ''}`;
@@ -25,16 +30,20 @@ export default function Header() {
     <header className={headerClass}>
       <div className="header-inner">
         <Link to="/" className="logo">
-          <div className="logo-icon"><i className="fa-solid fa-code" /></div>
-          Multi4<span className="accent">You</span>
+          <img src="/logo.png" alt="Multi4You" className="logo-img" />
         </Link>
 
+        <div
+          className={`m4u-nav-backdrop${navOpen ? ' open' : ''}`}
+          onClick={() => setNavOpen(false)}
+          aria-hidden="true"
+        />
         <nav className={`m4u-nav${navOpen ? ' open' : ''}`}>
+          <button className="mobile-close" onClick={() => setNavOpen(false)} aria-label="Close">&times;</button>
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/store">Store</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
-          <button className="mobile-close" onClick={() => setNavOpen(false)} aria-label="Close">&times;</button>
         </nav>
 
         <div className="header-actions">

@@ -34,18 +34,6 @@ export default function Store() {
 
   return (
     <>
-      <section className="store-hero">
-        <div className="container">
-          <span className="section-badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.15)' }}>
-            <i className="fa-solid fa-store" /> Store
-          </span>
-          <h1 className="section-title white">Browse All Products</h1>
-          <p className="section-desc centered" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Curated collection of production-ready SaaS applications.
-          </p>
-        </div>
-      </section>
-
       <section className="store-grid">
         <div className="container">
           <div className="row g-4 mb-4">
