@@ -1541,7 +1541,7 @@ ul {
 
 /* ---------- Contact Page ---------- */
 .contact-section {
-  padding: 60px 0 100px;
+  padding: 120px 0 100px;
 }
 
 .contact-card {
@@ -2060,7 +2060,7 @@ textarea.form-control-custom {
   .testimonials-section,
   .cta-section,
   .contact-section {
-    padding: 60px 0;
+    padding: 90px 0 60px;
   }
 
   /* -- Buttons -- */

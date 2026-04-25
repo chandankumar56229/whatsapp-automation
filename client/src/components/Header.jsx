@@ -21,7 +21,7 @@ export default function Header() {
   }, [navOpen]);
 
   // Force "scrolled" look on dark-hero pages
-  const darkHeroPaths = ['/about', '/contact'];
+  const darkHeroPaths = ['/about'];
   const isDarkHero = darkHeroPaths.some((p) => location.pathname.startsWith(p)) ||
                      location.pathname.startsWith('/product/');
   const headerClass = `m4u-header${scrolled || isDarkHero ? ' scrolled' : ''}`;

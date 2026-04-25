@@ -50,50 +50,16 @@ export default function Contact() {
 
   return (
     <>
-      <section className="about-hero">
-        <div className="container text-center">
-          <span className="section-badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.15)' }}>
-            <i className="fa-solid fa-envelope" /> Contact
-          </span>
-          <h1 className="section-title white">Get in Touch</h1>
-          <p className="section-desc centered" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Have a question or need help? Send us a message — we usually respond within 24 hours.
-          </p>
-        </div>
-      </section>
-
       <section className="contact-section">
         <div className="container">
-          <div className="row g-4 mb-5">
-            <div className="col-md-4">
-              <div className="contact-card">
-                <div className="contact-icon"><i className="fa-solid fa-envelope" /></div>
-                <h4>Email</h4>
-                <p style={{ color: 'var(--gray-500)' }}>hello@multi4you.store</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="contact-card">
-                <div className="contact-icon"><i className="fa-brands fa-whatsapp" /></div>
-                <h4>WhatsApp</h4>
-                <p style={{ color: 'var(--gray-500)' }}>
-                  <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    {WA_DISPLAY}
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="contact-card">
-                <div className="contact-icon"><i className="fa-solid fa-clock" /></div>
-                <h4>Hours</h4>
-                <p style={{ color: 'var(--gray-500)' }}>24/7 Support</p>
-              </div>
-            </div>
+          <div className="store-heading">
+            <span className="section-badge"><i className="fa-solid fa-envelope" /> Contact</span>
+            <h1 className="store-title">Get in Touch</h1>
+            <p className="store-subtitle">Send us a message — we usually respond within 24 hours.</p>
           </div>
 
-          <div className="row g-4">
-            <div className="col-lg-7">
+          <div className="row g-4 justify-content-center mb-5">
+            <div className="col-lg-8">
               <div className="contact-form-wrapper">
                 <h3 className="mb-4">Send us a message</h3>
                 <form onSubmit={onSubmit}>
@@ -153,8 +119,39 @@ export default function Contact() {
                 </form>
               </div>
             </div>
-            <div className="col-lg-5">
-              <h3 className="mb-4">Frequently Asked Questions</h3>
+          </div>
+
+          <div className="row g-4 mb-5">
+            <div className="col-md-4">
+              <div className="contact-card">
+                <div className="contact-icon"><i className="fa-solid fa-envelope" /></div>
+                <h4>Email</h4>
+                <p style={{ color: 'var(--gray-500)' }}>hello@multi4you.store</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="contact-card">
+                <div className="contact-icon"><i className="fa-brands fa-whatsapp" /></div>
+                <h4>WhatsApp</h4>
+                <p style={{ color: 'var(--gray-500)' }}>
+                  <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    {WA_DISPLAY}
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="contact-card">
+                <div className="contact-icon"><i className="fa-solid fa-clock" /></div>
+                <h4>Hours</h4>
+                <p style={{ color: 'var(--gray-500)' }}>24/7 Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row g-4 justify-content-center">
+            <div className="col-lg-8">
+              <h3 className="mb-4 text-center">Frequently Asked Questions</h3>
               {FAQS.map((f) => <FaqItem key={f.q} q={f.q} a={f.a} />)}
             </div>
           </div>
