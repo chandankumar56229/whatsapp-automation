@@ -30,7 +30,7 @@ export default function Header() {
     <header className={headerClass}>
       <div className="header-inner">
         <Link to="/" className="logo">
-          <img src="/logo.png" alt="Multi4You" className="logo-img" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Multi4You" className="logo-img" />
         </Link>
 
         <div

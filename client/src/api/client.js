@@ -10,13 +10,17 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+const BASE = import.meta.env.BASE_URL || '/';
+const adminPath = `${BASE}admin`.replace(/\/+/g, '/');
+const adminLogin = `${BASE}admin/login`.replace(/\/+/g, '/');
+
 api.interceptors.response.use(
   (res) => res,
   (err) => {
     if (err.response?.status === 401 && !err.config?.url?.includes('/auth/login')) {
       localStorage.removeItem('m4u_token');
-      if (window.location.pathname.startsWith('/admin') && window.location.pathname !== '/admin/login') {
-        window.location.href = '/admin/login';
+      if (window.location.pathname.startsWith(adminPath) && window.location.pathname !== adminLogin) {
+        window.location.href = adminLogin;
       }
     }
     return Promise.reject(err);

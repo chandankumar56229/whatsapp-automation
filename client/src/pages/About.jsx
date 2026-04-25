@@ -47,7 +47,7 @@ export default function About() {
               </p>
             </div>
             <div className="col-lg-6">
-              <img src="/whatscamp-dashboard.png" alt="Our work" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-2xl)' }} />
+              <img src={`${import.meta.env.BASE_URL}whatscamp-dashboard.png`} alt="Our work" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-2xl)' }} />
             </div>
           </div>
         </div>
