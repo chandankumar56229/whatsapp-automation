@@ -39,11 +39,16 @@ export default function Header() {
           aria-hidden="true"
         />
         <nav className={`m4u-nav${navOpen ? ' open' : ''}`}>
-          <button className="mobile-close" onClick={() => setNavOpen(false)} aria-label="Close">&times;</button>
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/store">Store</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <div className="m4u-nav-header">
+            <span className="m4u-nav-title">Menu</span>
+            <button className="mobile-close" onClick={() => setNavOpen(false)} aria-label="Close">&times;</button>
+          </div>
+          <div className="m4u-nav-links">
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/store">Store</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
+          </div>
         </nav>
 
         <div className="header-actions">

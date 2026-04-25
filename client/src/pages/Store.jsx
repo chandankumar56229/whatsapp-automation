@@ -36,6 +36,11 @@ export default function Store() {
     <>
       <section className="store-grid">
         <div className="container">
+          <div className="store-heading">
+            <span className="section-badge"><i className="fa-solid fa-store" /> Marketplace</span>
+            <h1 className="store-title">All Products</h1>
+            <p className="store-subtitle">Browse our curated catalog of production-ready software.</p>
+          </div>
           <div className="row g-4 mb-4">
             <div className="col-md-6">
               <input
