@@ -136,13 +136,11 @@ export default function ProductForm() {
 
   return (
     <div className="max-w-4xl">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <Link to="/admin/products" className="text-sm text-gray-500 hover:text-primary">← Back</Link>
-          <h1 className="font-heading text-3xl font-bold text-primary mt-1">
-            {isEdit ? 'Edit Product' : 'New Product'}
-          </h1>
-        </div>
+      <div className="mb-6">
+        <Link to="/admin/products" className="text-sm text-gray-500 hover:text-primary">← Back</Link>
+        <h1 className="font-heading text-2xl sm:text-3xl font-bold text-primary mt-1">
+          {isEdit ? 'Edit Product' : 'New Product'}
+        </h1>
       </div>
 
       {error && (

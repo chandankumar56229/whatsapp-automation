@@ -1,4 +1,5 @@
-import { NavLink, Outlet, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
 const NAV = [
@@ -9,17 +10,61 @@ const NAV = [
 
 export default function AdminLayout() {
   const { admin, logout } = useAuth();
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => { setOpen(false); }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
   return (
     <div className="min-h-screen bg-gray-50 font-body text-gray-800">
-      <aside className="fixed top-0 left-0 h-screen w-64 bg-primary text-white flex flex-col">
-        <div className="px-6 py-6 border-b border-white/10">
+      {/* Mobile top bar */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-primary text-white flex items-center justify-between px-4 z-40">
+        <Link to="/" className="font-heading font-bold text-base text-white">
+          Multi4<span className="text-gray-400">You</span> Admin
+        </Link>
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          className="text-white p-2"
+        >
+          <i className="fa-solid fa-bars text-lg" />
+        </button>
+      </header>
+
+      {/* Backdrop (mobile only) */}
+      {open && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/40 z-40 transition-opacity"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed top-0 left-0 h-screen w-64 bg-primary text-white flex flex-col z-50 transition-transform duration-300 ${
+          open ? 'translate-x-0' : '-translate-x-full'
+        } lg:translate-x-0`}
+      >
+        <div className="px-6 py-6 border-b border-white/10 flex items-center justify-between">
           <Link to="/" className="font-heading font-bold text-xl text-white">
             Multi4<span className="text-gray-400">You</span> Admin
           </Link>
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+            className="lg:hidden text-white text-xl leading-none p-1"
+          >
+            &times;
+          </button>
         </div>
 
-        <nav className="flex-1 p-4 space-y-1">
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {NAV.map((n) => (
             <NavLink
               key={n.to}
@@ -55,7 +100,7 @@ export default function AdminLayout() {
         </div>
       </aside>
 
-      <main className="ml-64 p-8">
+      <main className="lg:ml-64 pt-14 lg:pt-0 p-4 sm:p-6 lg:p-8">
         <Outlet />
       </main>
     </div>

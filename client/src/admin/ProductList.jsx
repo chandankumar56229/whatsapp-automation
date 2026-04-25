@@ -28,14 +28,14 @@ export default function ProductList() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
-          <h1 className="font-heading text-3xl font-bold text-primary">Products</h1>
-          <p className="text-gray-500 mt-1">{products.length} total</p>
+          <h1 className="font-heading text-2xl sm:text-3xl font-bold text-primary">Products</h1>
+          <p className="text-gray-500 mt-1 text-sm">{products.length} total</p>
         </div>
         <Link
           to="/admin/products/new"
-          className="px-5 py-2.5 bg-primary text-white rounded-lg font-heading font-bold text-sm hover:bg-gray-800 transition flex items-center gap-2"
+          className="self-start sm:self-auto px-4 sm:px-5 py-2.5 bg-primary text-white rounded-lg font-heading font-bold text-sm hover:bg-gray-800 transition inline-flex items-center gap-2"
         >
           <i className="fa-solid fa-plus" /> New Product
         </Link>
@@ -52,7 +52,8 @@ export default function ProductList() {
           />
         </div>
 
-        <table className="w-full">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[640px]">
           <thead className="bg-gray-50 text-left text-xs font-semibold text-gray-500 uppercase">
             <tr>
               <th className="px-6 py-3">Product</th>
@@ -109,6 +110,7 @@ export default function ProductList() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
