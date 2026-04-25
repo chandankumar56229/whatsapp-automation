@@ -32,7 +32,6 @@ export default function Header() {
         <nav className={`m4u-nav${navOpen ? ' open' : ''}`}>
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/store">Store</NavLink>
-          <NavLink to="/product/whatscamp">WhatsCamp</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <button className="mobile-close" onClick={() => setNavOpen(false)} aria-label="Close">&times;</button>
